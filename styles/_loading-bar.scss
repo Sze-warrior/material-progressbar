@@ -1,0 +1,26 @@
+
+.loading-bar-container{
+	width: 100%;
+	height: $loading-bar-height;
+	background-color: $material-blue-light;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow-x: hidden;	
+}
+
+.bar{
+	width: 60%;
+	height: $loading-bar-height;
+	background-color: blue;	
+	position: absolute;
+	left: 0;
+	right: 0;
+	@include transition(0.2s);
+	@include animation(move infinite ease-in-out 1.2s);
+}
+
+@include keyframes(move){
+  0% { right: 0; left: -40px; width: 10%; }
+  100% { right: 0%; left: 100%; width: 65%;}
+}
